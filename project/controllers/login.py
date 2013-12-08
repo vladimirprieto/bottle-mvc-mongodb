@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
 from project import app, users, sessions
 from bottle import template, request, response, redirect
 import cgi
 import re
 
 def index():
-    return template('login/login')
+    return template('login/login', dict(stylesheet=['login.css']) )
 
 def login():
     username = request.forms.get("username")

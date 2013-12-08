@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from project import app, users, sessions
 from bottle import template, request, response, redirect
 import cgi
@@ -10,14 +9,20 @@ def index():
 
     username = sessions.get_username(cookie)
 
-    return template('welcome/index', dict(username=username) )
+    return template('welcome/index', dict(username=username, stylesheet=['jumbotron-narrow.css'], title='Bottle MVC Skeleton') )
 
 def signin():
     return template('welcome/signin',
-                            dict(username="", password="",
+                            dict(
+                                username="", 
+                                password="",
                                 password_error="",
-                                email="", username_error="", email_error="",
-                                verify_error ="")                                    
+                                email="", 
+                                username_error="", 
+                                email_error="",
+                                verify_error ="",
+                                stylesheet=['login.css']
+                                )
                             )
 
 def signup():
@@ -39,9 +44,11 @@ def signup():
         print session_id
         response.set_cookie("session", session_id)
         redirect("/")
+
     else:
+
         print "user did not validate"
-        return template("welcome/signin", errors)
+        return template("welcome/signin", errors.items() + dict(stylesheet=['login.css']).items() )
 
     return template("welcome/signup")
 

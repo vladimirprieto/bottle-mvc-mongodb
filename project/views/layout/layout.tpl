@@ -1,15 +1,27 @@
 <!doctype html>
-     <head>
-         <link rel="stylesheet" type="text/css" href="/css/style.css">
-         <title>{{ title }}</title>
-     </head>
-     <body>
-         <a style="text-align:center" href="/">Home</a>
-         <div class="page">
-             % if message is not '':
-                 <div class="flash">{{ message }}</div>
-             %end
-             %include
-        </div>
-    </body>
+<head>
+   <title>{{ title }}</title>
+   <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="/js/bootstrap.min.css">
+
+   % for ss in stylesheet:
+   <link rel="stylesheet" type="text/css" href="css/{{ ss }}">
+   %end
+
+</head>
+<body>
+
+      % if message is not '':
+  <div class="page">
+       <div class="flash">{{ message }}</div>
+  </div>
+      %end
+
+  %include
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
 </html>
