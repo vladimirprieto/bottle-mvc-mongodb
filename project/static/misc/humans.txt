@@ -1,0 +1,11 @@
+/* TEAM */
+	Builder: Vladimir Prieto
+	Contact: vladimirprieto [at] gmail.com
+	Site: about.me/vladimirprieto
+	From: Iquique - Chile, South America
+
+/* SITE */
+	Standards: HTML5, CSS3
+  Components: python, bottle-mvc
+  Software: Sublime Text, Git
+  Servers: Linux, Nginx
